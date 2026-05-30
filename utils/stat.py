@@ -19,7 +19,7 @@ def compute_statistics(h5_path):
         "label": []
     }
     
-    with h5py.File(h5_path, "r") as hf:        
+    with h5py.File(h5_path, "r") as hf:
         for key in hf.keys():
             points = hf[key]["points"][:]      # (N, 3)
             label = int(hf[key].attrs["label"])
@@ -37,15 +37,16 @@ def compute_statistics(h5_path):
     
     df = pd.DataFrame(stats)
     
-    global_stats = df.describe().T[['mean', 'std', 'min', 'max']]
-    global_stats['std'] = global_stats['std'].round(4)
-    global_stats = global_stats.round(4)
-    
     class_stats = df.groupby('label').agg({
-        'num_points': ['mean', 'std', 'min', 'max'],
+        'num_points': ['count', 'mean', 'std', 'min', 'max'],
         'range_x': ['mean', 'std'],
         'range_y': ['mean', 'std'],
         'range_z': ['mean', 'std']
     }).round(4)
+    
+    class_stats = class_stats.rename(columns={'count': 'num_clouds'}, level=1)
+    
+    global_stats = df.describe().T[['mean', 'std', 'min', 'max']].round(4)
+
     
     return class_stats, global_stats
