@@ -51,3 +51,12 @@ def build_diagrams(
     trees, diagrams = zip(*results)
 
     return trees, diagrams
+
+def persistence(trees, n_jobs=-1):
+    
+    results = Parallel(n_jobs=n_jobs)(
+		delayed(tree.persistence)()
+    	for tree in tqdm(trees, desc="Processing clouds")
+	)
+
+    return results
