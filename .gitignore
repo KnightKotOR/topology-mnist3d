@@ -185,5 +185,4 @@ pip-selfcheck.json
 # Local audio samples and datasets
 ml/samples/
 samples/
-data/
-datasets/
+data/MNIST3d

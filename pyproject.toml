@@ -26,4 +26,6 @@ dependencies = [
     "scipy>=1.17.1",
     "nbformat>=4.2.0",
     "pandas>=2.0.3",
+    "catboost>=1.2.10",
+    "xgboost>=3.2.0",
 ]
