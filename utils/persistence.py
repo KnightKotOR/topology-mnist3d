@@ -23,7 +23,7 @@ def process_cloud(cloud, lifetime_thresh=1e-8, max_alpha_square=10):
         if np.isinf(pair[1]) or pair[1] - pair[0] > lifetime_thresh
     ]
 
-    return st, persistence
+    return None, persistence
 
 
 def build_diagrams(
