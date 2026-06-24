@@ -26,7 +26,7 @@ class Objective(object):
         
         self.model_name = model_name
         self.best_model = None
-        self.best_test_score = float('-inf')
+        self.best_val_score = float('-inf')
         
         self.n = []
         self.model_name_list = []
@@ -72,9 +72,9 @@ class Objective(object):
         f1_val = f1_score(self.y_val, y_val_pred, average="macro")
         f1_test = f1_score(self.y_test, y_test_pred, average="macro")
 
-        if f1_test > self.best_test_score:
+        if f1_val > self.best_test_score:
             self.best_model = deepcopy(clf_obj)
-            self.best_test_score = f1_test
+            self.best_val_score = f1_val
 
         # Logging the results
         self.n.append(trial.number)
