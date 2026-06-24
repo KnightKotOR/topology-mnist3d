@@ -56,16 +56,6 @@ cover/
 *.mo
 *.pot
 
-# Django stuff:
-*.log
-local_settings.py
-db.sqlite3
-db.sqlite3-journal
-
-# Flask stuff:
-instance/
-.webassets-cache
-
 # Scrapy stuff:
 .scrapy
 
@@ -185,4 +175,6 @@ pip-selfcheck.json
 # Local audio samples and datasets
 ml/samples/
 samples/
-data/MNIST3d
+data/
+db.sqlite3
+ml/models/
