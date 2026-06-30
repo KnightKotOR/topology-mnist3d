@@ -1,7 +1,7 @@
 # TDA 3D MNIST Classification
 
 <!-- Meta & Language -->
-[![License](https://img.shields.io/github/license/yrmint/ml-app-arch)](#)
+[![License](https://img.shields.io/github/license/KnightKotOR/topology-mnist3d)](#)
 [![Python](https://img.shields.io/badge/Python-3.12%2B-3776AB?logo=python&logoColor=white)](#)
 
 <!-- Machine Learning & Data Science -->
@@ -28,7 +28,7 @@
 │       ├── train_point_clouds.h5  		# Тренировочный датасет
 │       ├── test_point_clouds.h5   		# Тестовый датасет
 │       └── voxelgrid.py           		# Модуль с классом VoxelGrid для вокселизации
-├── feature-extraction/
+├── notebooks/
 	├──alpha_complex.ipynb				# Первый эксперимент с альфа-комлпексом и векторизацией через ландшафты персистентности
 	└──cubical_complex_pipeline.ipynb	# Второй эксперимент с кубическим комплексом и множественными способами векторизации
 ├── ml/

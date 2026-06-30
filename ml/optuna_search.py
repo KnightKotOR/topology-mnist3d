@@ -72,7 +72,7 @@ class Objective(object):
         f1_val = f1_score(self.y_val, y_val_pred, average="macro")
         f1_test = f1_score(self.y_test, y_test_pred, average="macro")
 
-        if f1_val > self.best_test_score:
+        if f1_val > self.best_val_score:
             self.best_model = deepcopy(clf_obj)
             self.best_val_score = f1_val
 
@@ -131,7 +131,6 @@ class ModelOptimization:
             study = optuna.create_study(
                 direction="maximize",
                 sampler=sampler,
-                study_name="XG_cub_4000clouds",
                 load_if_exists=True,
                 storage="sqlite:///db.sqlite3"
             )
